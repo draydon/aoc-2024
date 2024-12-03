@@ -18,6 +18,7 @@ class Program
         
         ISolver solver = dayNumber switch
         {
+            1 => new Day1Solver(),
             _ => throw new Exception($"Invalid day {day}")
         };
         
