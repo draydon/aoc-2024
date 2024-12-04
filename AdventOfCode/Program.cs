@@ -12,7 +12,7 @@ class Program
 
         if (string.IsNullOrWhiteSpace(day) || int.TryParse(day, out int dayNumber) is false)
         {
-            Console.WriteLine("Invalid dat.");
+            Console.WriteLine("Invalid day.");
             return;
         }
         
@@ -20,12 +20,18 @@ class Program
         {
             1 => new Day1Solver(),
             2 => new Day2Solver(),
+            3 => new Day3Solver(),
             _ => throw new Exception($"Invalid day {day}")
         };
         
+        DateTime start = DateTime.Now;
+
         solver.Setup(InputLoader.LoadInput(day));
         solver.SolvePart1();
         solver.SolvePart2();
         solver.PrintAnswer();
+        DateTime end = DateTime.Now;
+
+        Console.WriteLine("Day {0} solved in {1}.", dayNumber, end - start);
     }
 }
