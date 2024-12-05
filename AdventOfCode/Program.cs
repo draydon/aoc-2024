@@ -21,6 +21,7 @@ class Program
             1 => new Day1Solver(),
             2 => new Day2Solver(),
             3 => new Day3Solver(),
+            4 => new Day4Solver(),
             _ => throw new Exception($"Invalid day {day}")
         };
         
